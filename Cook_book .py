@@ -1,6 +1,9 @@
 from collections import Counter
 file = open("recipes.txt")
 onlist = file.read().split("\n")
+
+
+
 some_list3 = []
 
 for line in onlist:
@@ -66,13 +69,14 @@ for k,v in zip(Key_list, someone_list):
 print(finally_Dict)
 
 #----------------------------------------------------------------------------------------------------------
-def get_shop_list_by_dishes(dishes, person_count):
-    dishes = ['Омлет','Запеченный картофель']
-    person = 2
+def get_shop_list_by_dishes(dishes1, person_count):
+    dishes = dishes1
+    person = person_count
     second_dict = {}
     dish_name = []
     dish_ingr = []
     dish_ingr2 = []
+
     for i in dishes:
         for j,k in finally_Dict.items():
             if i == j:
@@ -85,9 +89,6 @@ def get_shop_list_by_dishes(dishes, person_count):
                 for ingr in k:
                     dish_ingr.append(ingr['measure'])
                     dish_ingr.append(int(ingr['quantity']) * person)
-
-
-
 
     function_dict = {}
     list_for_dish = []
@@ -115,11 +116,9 @@ def get_shop_list_by_dishes(dishes, person_count):
     for k,v in zip(dish_name, list_for_dish2):
             function_dict[k] = v
 
-    #print(dish_name)
-    #print(dish_ingr)
     print(function_dict)
-                    
-get_shop_list_by_dishes(['Омлет','Запеченный картофель'], 2)
+
+get_shop_list_by_dishes(['Омлет'], 1)
 
 
 
