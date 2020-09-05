@@ -1,9 +1,8 @@
 from collections import Counter
-file = open("recipes.txt")
-onlist = file.read().split("\n")
 
-def list_forming_function(somefile):
-    onlist = somefile
+def list_forming_function():
+    file = open("recipes.txt")
+    onlist = file.read().split("\n")
     some_list3 = []
     # Делаем список списков (разбиваю каждый элемент строки на отдельный сисок)
     for line in onlist:
@@ -71,7 +70,7 @@ def get_shop_list_by_dishes(dishes, person_count):
     person = person_count
     dish_name = []
     dish_ingr = []
-    finally_dict = list_forming_function(onlist)
+    finally_dict = list_forming_function()
     for i in dishes:
         for j,k in finally_dict.items():
             if i == j:
@@ -114,7 +113,7 @@ def get_shop_list_by_dishes(dishes, person_count):
 
     print(function_dict)
 
-print(list_forming_function(onlist))
+print(list_forming_function())
 get_shop_list_by_dishes(['Омлет','Омлет','Утка по-пекински', 'Омлет'], 2)
 
 
